@@ -147,7 +147,8 @@ public class ImageEmployee extends Employee{
 
         /**
          * Set the {@code ImageIcon} for this new {@code Employee}.</p>
-         * This method will also cause the passed image to be resized.
+         * This method will also cause the passed image to be resized
+         *  (leaving the ratio untouched).
          * @param image the {@code ImageIcon} for this employee.
          * @return this builder-instance.
          * @throws NullPointerException if {@code image} is {@code null}.
@@ -155,7 +156,7 @@ public class ImageEmployee extends Employee{
         public Builder setImage(ImageIcon image){
             if (image == null) throw new NullPointerException("Image can't be null!");
             this.image = new ImageIcon(
-                    image.getImage().getScaledInstance(90, 191, Image.SCALE_SMOOTH)
+                    image.getImage().getScaledInstance(-1, 191, Image.SCALE_SMOOTH)
             );
             return this;
         }
