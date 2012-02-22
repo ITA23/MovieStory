@@ -1,0 +1,5 @@
+# Ignore the IDE-settings
+MovieStory.iml
+
+# Ignore all Java-Bytecode
+*.class
