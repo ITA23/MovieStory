@@ -32,6 +32,17 @@ public class StaffPopUp implements PopUp, ListSelectionListener{
     }
 
     @Override
+    public boolean open() {
+        return true;
+    }
+
+    @Override
+    public Object openForResult() {
+        // TODO Implement this so we can get an "Employee" from it.
+        return null;
+    }
+
+    @Override
     public JComponent getView() {
         final JPanel content = new JPanel(new BorderLayout());
         staff.addListSelectionListener(this);

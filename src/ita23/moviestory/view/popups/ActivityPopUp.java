@@ -37,6 +37,17 @@ public class ActivityPopUp implements PopUp{
     }
 
     @Override
+    public boolean open() {
+        // TODO get an Employee here.
+        return true;
+    }
+
+    @Override
+    public Object openForResult() {
+        return null;
+    }
+
+    @Override
     public JComponent getView() {
         final JList activity_list = new JList();
         DefaultListModel model = new DefaultListModel();

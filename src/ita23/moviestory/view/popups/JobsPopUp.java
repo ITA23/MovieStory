@@ -58,7 +58,20 @@ public class JobsPopUp implements PopUp, ActionListener, ListSelectionListener {
                 .build()
         );
     }
-    
+
+    @Override
+    public boolean open() {
+        if (JobManager.INSTANCE.isWorking()){
+            System.out.println("Already working on something.");
+            return false;
+        } return true;
+    }
+
+    @Override
+    public Object openForResult() {
+        return null;
+    }
+
     @Override
     public JComponent getView() {
         final JPanel content = new JPanel(new BorderLayout());
