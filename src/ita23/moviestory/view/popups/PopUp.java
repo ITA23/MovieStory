@@ -21,6 +21,25 @@ public interface PopUp {
     }
 
     /**
+     * Is called, when the popup is normally opened.</p>
+     *  The method can return {@code false} to indicate, that
+     *  it can not be opened at this point. This can be due to
+     *  the fact that some options are currently deactivated.
+     * @return {@code false} if you want to abort the PopUp
+     *  being opened, {@code true} otherwise.
+     */
+    public boolean open();
+
+    /**
+     * This method will be called, when the PopUp is opened
+     *  to return some kind of result.</p>
+     * This can be used to get input from a user.
+     * @return the result that should be returned by the
+     *  PopUp.
+     */
+    public Object openForResult();
+
+    /**
      * Returns the view of this PopUp as a {@code JComponent}.</p>
      * Normally, this will be everything that will be shown in the
      *  popup.

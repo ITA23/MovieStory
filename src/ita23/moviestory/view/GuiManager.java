@@ -2,7 +2,6 @@ package ita23.moviestory.view;
 
 import ita23.managerframework.contract.JobManager;
 import ita23.managerframework.contract.JobStatusChangedListener;
-import ita23.moviestory.sound.SoundManager;
 import ita23.moviestory.view.elements.GameMenu;
 import ita23.moviestory.view.popups.PopUp;
 
@@ -83,9 +82,11 @@ public class GuiManager extends JPanel implements ActionListener, JobStatusChang
         popup_content.add(content.getView());
         popup.setBorder(BorderFactory.createTitledBorder(content.getTitle()));
         popup_content.validate();
-        setPopupVisibility(true);
         // Set the new popup:
         this.current_popup_content = content;
+        // Notify the PopUp and check if we can show it:
+        if (this.current_popup_content.open())
+            setPopupVisibility(true);
     }
 
     /**
@@ -158,8 +159,7 @@ public class GuiManager extends JPanel implements ActionListener, JobStatusChang
         // TODO Animation, Buffer, etz
         g.setColor(Color.BLACK);
         g.drawString("Hier dann Zeug...", 130, 80);
-        SoundManager.INSTANCE.doBackGroundSound();
-
+        //SoundManager.INSTANCE.doBackGroundSound();
     }
 
     @Override
